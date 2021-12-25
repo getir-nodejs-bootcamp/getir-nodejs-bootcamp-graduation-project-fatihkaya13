@@ -1,10 +1,10 @@
 {
   "name": "getir-nodejs-bootcamp-graduation-project-fatihkaya13",
   "version": "1.0.0",
-  "description": "case study application for single endpoint written with  node.js, express.js that connects to mongodb",
+  "description": "service to handle single post request by returning sum of total counts of each document's array with specified ranges",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/app.js"
   },
   "repository": {
     "type": "git",
@@ -37,6 +37,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "nodemon": "^2.0.15",
     "prettier": "^2.5.1"
   }
 }
