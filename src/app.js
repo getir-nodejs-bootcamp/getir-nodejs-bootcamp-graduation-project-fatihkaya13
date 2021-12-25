@@ -1,7 +1,7 @@
 const express = require('express');
 const helmet = require('helmet');
 const config = require('./config');
-const connectDB = require('./db/mongodb');
+const { connectDB } = require('./db/mongodb');
 const ApiError = require('./errors/ApiError');
 const errorHandler = require('./middlewares/errorHandler');
 const httpStatus = require('http-status');
@@ -42,3 +42,5 @@ app.listen(process.env.EXPRESS_APP_PORT, () => {
     `Server is running on port ${process.env.EXPRESS_APP_PORT}... press cntrl-c to exit`
   );
 });
+
+module.exports = app;
