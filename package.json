@@ -4,7 +4,8 @@
   "description": "service to handle single post request by returning sum of total counts of each document's array with specified ranges",
   "main": "app.js",
   "scripts": {
-    "start": "node src/app.js"
+    "start": "node src/app.js",
+    "test": "jest src/tests/server.test.js"
   },
   "repository": {
     "type": "git",
@@ -37,7 +38,9 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.4.5",
     "nodemon": "^2.0.15",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "supertest": "^6.1.6"
   }
 }
