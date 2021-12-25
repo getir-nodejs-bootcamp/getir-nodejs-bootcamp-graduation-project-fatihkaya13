@@ -1,6 +1,6 @@
 const Record = require('../models/Records');
 
-const listTotalCounts = () => {
+const listTotalCounts = async () => {
   const pipeline = [
     {
       $match: {
@@ -34,7 +34,7 @@ const listTotalCounts = () => {
     },
   ];
 
-  return Record.aggregate(pipeline);
+  return await Record.aggregate(pipeline);
 };
 
 module.exports = { listTotalCounts };
