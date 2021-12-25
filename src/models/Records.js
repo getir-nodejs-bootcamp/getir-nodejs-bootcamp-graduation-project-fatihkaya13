@@ -1,11 +1,7 @@
 const Mongoose = require('mongoose');
 
-const RecordSchema = new Mongoose.Schema({
-  // field definitions are not necessary here
-  // key: String,
-  // createdAt: Date,
-  // counts: [Number],
-});
+// fields for schema is not necessary for this project
+const RecordSchema = new Mongoose.Schema({});
 
 const Record = Mongoose.model('record', RecordSchema);
 
