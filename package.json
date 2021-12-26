@@ -4,7 +4,7 @@
   "description": "service to handle single post request by returning sum of total counts of each document's array with specified ranges",
   "main": "app.js",
   "scripts": {
-    "start": "node src/app.js",
+    "start": "node app.js",
     "test": "jest src/tests/server.test.js"
   },
   "repository": {
@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/getir-nodejs-bootcamp/getir-nodejs-bootcamp-graduation-project-fatihkaya13#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.2",
     "helmet": "^4.6.0",
