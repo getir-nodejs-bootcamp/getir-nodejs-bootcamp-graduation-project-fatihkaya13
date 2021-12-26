@@ -1,12 +1,15 @@
 const express = require('express');
 const helmet = require('helmet');
-const config = require('./config');
-const { connectDB } = require('./db/mongodb');
-const ApiError = require('./errors/ApiError');
-const errorHandler = require('./middlewares/errorHandler');
+const config = require('./src/config');
+const { connectDB } = require('./src/db/mongodb');
+const ApiError = require('./src/errors/ApiError');
+const errorHandler = require('./src/middlewares/errorHandler');
 const httpStatus = require('http-status');
+const cors = require('cors');
 
-const { RecordsRoutes } = require('./routes');
+const { RecordsRoutes } = require('./src/routes');
+
+const PORT = process.env.EXPRESS_APP_PORT || 8080;
 
 // load config
 config();
@@ -19,6 +22,8 @@ const app = express();
 app.use(express.json());
 // use helmet for security reasons
 app.use(helmet());
+// enable cors for all requests
+app.use(cors());
 
 app.use('/records', RecordsRoutes);
 // any route that does not match with /records will be handled by below middleware
@@ -37,10 +42,8 @@ app.use((req, res, next) => {
 // for any error, use the error handler middleware
 app.use(errorHandler);
 
-app.listen(process.env.EXPRESS_APP_PORT, () => {
-  console.log(
-    `Server is running on port ${process.env.EXPRESS_APP_PORT}... press cntrl-c to exit`
-  );
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}... press cntrl-c to exit`);
 });
 
 module.exports = app;
