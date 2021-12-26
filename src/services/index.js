@@ -1,6 +1,13 @@
 const Record = require('../models/Records');
 const ApiError = require('../errors/ApiError');
 
+/**
+ * @param {date} startDate begin date for createdAt field
+ * @param {date} endDate finish date for createdAt field
+ * @param {number} minCount minimumum sum of counts for counts array field
+ * @param {number} maxCount maximum sum of counts for counts array field
+ * @returns Returns an object with either DB response or 'error'
+ */
 const listTotalCounts = async (startDate, endDate, minCount, maxCount) => {
   // the pipeline is composed of two match stages and one project stage
   // it is unnecessary to calculate the sum of counts arrays for each document
