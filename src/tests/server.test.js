@@ -4,7 +4,7 @@ const { listTotalCounts } = require('../services');
 describe('API Tests', () => {
   let app;
   beforeAll(() => {
-    app = require('../app');
+    app = require('../../app');
   });
   afterAll(() => {
     disconnectDB();
