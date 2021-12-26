@@ -1,10 +1,13 @@
 const request = require('supertest');
 const { disconnectDB } = require('../db/mongodb');
 const { listTotalCounts } = require('../services');
+const { getTotalCounts } = require('../controllers');
 describe('API Tests', () => {
+  // increase test timeout
+  jest.setTimeout(15000);
   let app;
   beforeAll(() => {
-    app = require('../app');
+    app = require('../../app');
   });
   afterAll(() => {
     disconnectDB();
@@ -69,8 +72,8 @@ describe('API Tests', () => {
       request(app)
         .get('/records**')
         .then((response) => {
-          expect(response.error.text).toEqual(
-            '{"error":{"code":5,"msg":"EndpointError: Endpoint is not found"}}'
+          expect(response.body.message.msg).toEqual(
+            'EndpointError: Endpoint is not found'
           );
           done();
         });
@@ -78,6 +81,9 @@ describe('API Tests', () => {
   });
 
   describe('Service Layer', () => {
+    test('Service Layer: function should be defined', () => {
+      expect(listTotalCounts).toBeDefined();
+    });
     test('Service Layer: listTotalCounts result array should count 7', async () => {
       const startDate = new Date('2016-01-01');
       const endDate = new Date('2016-02-01');
@@ -90,6 +96,12 @@ describe('API Tests', () => {
         maxCount
       );
       expect(result.length).toBe(7);
+    });
+  });
+
+  describe('Controller Layer', () => {
+    test('Controller Layer: function should be defined', () => {
+      expect(getTotalCounts).toBeDefined();
     });
   });
 });
