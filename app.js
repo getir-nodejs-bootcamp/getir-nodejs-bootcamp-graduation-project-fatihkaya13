@@ -6,10 +6,19 @@ const ApiError = require('./src/errors/ApiError');
 const errorHandler = require('./src/middlewares/errorHandler');
 const httpStatus = require('http-status');
 const cors = require('cors');
-
+const path = require('path');
+const fs = require('fs');
+const morgan = require('morgan');
+const logger = require('./src/logger');
 const { RecordsRoutes } = require('./src/routes');
 
 const PORT = process.env.EXPRESS_APP_PORT || 8080;
+
+// create a write stream (in append mode)
+const accessLogStream = fs.createWriteStream(
+  path.join(__dirname, './src/logs', 'network-access.log'),
+  { flags: 'a' }
+);
 
 // load config
 config();
@@ -22,8 +31,10 @@ const app = express();
 app.use(express.json());
 // use helmet for security reasons
 app.use(helmet());
-// enable cors for all requests
+// enable cors for all requests for browser engines
 app.use(cors());
+// setup the morgan logger for any request log
+app.use(morgan('combined', { stream: accessLogStream }));
 
 app.use('/records', RecordsRoutes);
 // any route that does not match with /records will be handled by below middleware
@@ -43,7 +54,10 @@ app.use((req, res, next) => {
 app.use(errorHandler);
 
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}... press cntrl-c to exit`);
+  logger.log({
+    level: 'info',
+    message: `Server is running on port ${PORT}... press cntrl-c to exit`,
+  });
 });
 
 module.exports = app;
