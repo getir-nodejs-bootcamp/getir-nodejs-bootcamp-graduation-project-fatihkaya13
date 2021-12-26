@@ -35,6 +35,8 @@ app.use(helmet());
 app.use(cors());
 // setup the morgan logger for any request log
 app.use(morgan('combined', { stream: accessLogStream }));
+// if it is development; then log responses to console
+process.env.NODE_ENV == 'development' && app.use(morgan('dev'));
 
 app.use('/records', RecordsRoutes);
 // any route that does not match with /records will be handled by below middleware
