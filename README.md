@@ -24,6 +24,19 @@ The following route handles post requests.
 
 - http://fatihkaya-getir-case-study.eu-central-1.elasticbeanstalk.com/records
 
+In addition, the application is containerized with docker and being deployed to AWS ECS. 
+The url is below:
+
+- http://api-ecsalb-c48q2s6quzm5-769499631.us-east-2.elb.amazonaws.com/records
+
+This was an optional learning journey for me while working on the following tutorial.
+
+https://aws.amazon.com/getting-started/hands-on/break-monolith-app-microservices-ecs-docker-ec2/module-two/
+
+The documentation for building and running docker image locally and deployment process can be found via the following link.
+
+https://drive.google.com/file/d/17gT1GTb-oX30d3xGQXjLQWoaYRX_g0zk/view?usp=sharing
+
 ## Step 1 - installation
 
 - Clone the project. 
