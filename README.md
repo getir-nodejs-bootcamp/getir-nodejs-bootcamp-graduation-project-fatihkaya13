@@ -16,6 +16,7 @@ responses and requests.
 - [x] Modular structure is applied.
 - [x] Test suites are applied.
 
+## AWS Elastic Beanstalk Deployment
 The service is deployed to AWS Elastic Beanstalk. The URL is provided below.
 
 - http://fatihkaya-getir-case-study.eu-central-1.elasticbeanstalk.com/
@@ -24,6 +25,7 @@ The following route handles post requests.
 
 - http://fatihkaya-getir-case-study.eu-central-1.elasticbeanstalk.com/records
 
+## AWS ECS Deployment and Docker Documentation
 In addition, the application is containerized with docker and being deployed to AWS ECS. 
 The url is below, it handles POST request.
 
