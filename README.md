@@ -25,7 +25,7 @@ The following route handles post requests.
 - http://fatihkaya-getir-case-study.eu-central-1.elasticbeanstalk.com/records
 
 In addition, the application is containerized with docker and being deployed to AWS ECS. 
-The url is below:
+The url is below, it handles POST request.
 
 - http://api-ecsalb-c48q2s6quzm5-769499631.us-east-2.elb.amazonaws.com/records
 
