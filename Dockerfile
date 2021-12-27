@@ -7,7 +7,7 @@ WORKDIR /api
 # copy files from top level to api directory
 COPY . /api/
 
-ENV MONGODB_URI=mongodb+srv://challengeUser:WUMglwNBaydH8Yvu@challenge-xzwqd.mongodb.net/getir-case-study?retryWrites=true
+ENV MONGODB_URI=<mongodb connection string>
 ENV PORT=8080
 ENV NODE_ENV=prod
 
