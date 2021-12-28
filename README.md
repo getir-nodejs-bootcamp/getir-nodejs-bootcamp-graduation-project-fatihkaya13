@@ -180,7 +180,8 @@ npm test
 
 ## Application structure
 
-<img width="740" alt="diagram" src="https://user-images.githubusercontent.com/56218812/147538204-82381378-90b0-46ad-9791-4284ac77c084.png">
+<img width="780" alt="diagram" src="https://user-images.githubusercontent.com/56218812/147538772-0bae23d1-cb74-4c92-a8db-077d35365b9c.png">
+
 
 the above diagram is prepared via https://miro.com/
 
