@@ -42,40 +42,40 @@ https://drive.google.com/file/d/17gT1GTb-oX30d3xGQXjLQWoaYRX_g0zk/view?usp=shari
 ## Step 1 - installation
 
 - Clone the project. 
-- folder structure without node_modules folder and .env should like like the below diagram.
+- folder structure without node_modules folder, .env and .dockerignore should like like the below diagram.
 
 ```
-
 .
+├── Dockerfile
 ├── README.md
 ├── app.js
 ├── package-lock.json
 ├── package.json
 └── src
     ├── config
-    │   └── index.js
+    │   └── index.js
     ├── controllers
-    │   └── index.js
+    │   └── index.js
     ├── db
-    │   └── mongodb.js
+    │   └── mongodb.js
     ├── errors
-    │   └── ApiError.js
+    │   └── ApiError.js
     ├── logger
-    │   └── index.js
+    │   └── index.js
     ├── logs
-    │   ├── error.log
-    │   └── network-access.log
+    │   ├── error.log
+    │   └── network-access.log
     ├── middlewares
-    │   ├── errorHandler.js
-    │   └── validate.js
+    │   ├── errorHandler.js
+    │   └── validate.js
     ├── models
-    │   └── Records.js
+    │   └── Records.js
     ├── routes
-    │   └── index.js
+    │   └── index.js
     ├── services
-    │   └── index.js
+    │   └── index.js
     ├── tests
-    │   └── server.test.js
+    │   └── server.test.js
     └── validations
         └── Records.js
 
@@ -180,7 +180,7 @@ npm test
 
 ## Application structure
 
-<img width="930" alt="diagram" src="https://user-images.githubusercontent.com/56218812/147465114-0257696a-fd69-47b1-bbe1-0728625151de.png">
+<img width="740" alt="diagram" src="https://user-images.githubusercontent.com/56218812/147538204-82381378-90b0-46ad-9791-4284ac77c084.png">
 
 the above diagram is prepared via https://miro.com/
 
